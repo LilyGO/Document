@@ -89,17 +89,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../basics/index.html">3.入门使用篇</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">4.进阶开发篇</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../download/index.html">5.下载资源</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">6.相关链接</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id2">教程标题</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3">二级标题</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4">二级标题</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#restructuredtext">reStructuredText语法</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6.相关链接</a></li>
 </ul>
 
             
@@ -166,90 +156,6 @@
             
   <div class="section" id="id1">
 <h1>6.相关链接<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
-<div class="section" id="id2">
-<h2>教程标题<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
-<p>简单介绍下本章教程学习内容。</p>
-<div class="section" id="id3">
-<h3>二级标题<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h3>
-<p>简单的指令和单功能点，几条指令可以完成的，首先采用repl方式来教学。像一些比较复杂的应用类的示例，应附上完整的示例。
-每个知识点学习完后，应有个简单示例结合上文的知识点！</p>
-<p>repl示例:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">mpython</span> <span class="k">import</span> <span class="o">*</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">buzz</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">buzz</span><span class="o">.</span><span class="n">on</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">buzz</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
-<span class="go">&gt;&gt;&gt;</span>
-</pre></div>
-</div>
-<p>完成示例:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mpython</span> <span class="k">import</span> <span class="o">*</span>
-
-<span class="n">s</span><span class="o">=</span><span class="n">Servo</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">write_angle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">sleep_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">180</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-        <span class="n">s</span><span class="o">.</span><span class="n">write_angle</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">sleep_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>注解提示框：每步骤应有详细的语法或者函数说明！</p>
-</div>
-</div>
-<div class="section" id="id4">
-<h3>二级标题<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h3>
-<p>标题有一个由七位ASCII码编码的可打印非字母数字字符组成的下划线（或上划线加下划线）。推荐选择的字符有：“= - ‘ : ’ ” ~ ^ _ * + # &lt; &gt;”。</p>
-<div class="section" id="restructuredtext">
-<h4>reStructuredText语法<a class="headerlink" href="#restructuredtext" title="永久链接至标题">¶</a></h4>
-<p>图片插入，gif的动态图也可以。</p>
-<img alt="images/掌控-立2.png" src="images/掌控-立2.png" />
-<p>提供本地项目内下载方式</p>
-<p><code class="xref download docutils literal notranslate"><span class="pre">mPython掌控板V0.9原理图</span></code></p>
-<p><em>斜体</em></p>
-<p><strong>加粗</strong></p>
-<ul class="simple">
-<li><p>列表1</p></li>
-<li><p>列表2</p></li>
-</ul>
-<div class="section" id="id5">
-<h5>提示框<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h5>
-<div class="admonition note">
-<p class="admonition-title">注解</p>
-<p>注解</p>
-</div>
-<div class="admonition attention">
-<p class="admonition-title">注意</p>
-<p>注意</p>
-</div>
-<div class="admonition hint">
-<p class="admonition-title">提示</p>
-<p>提示</p>
-</div>
-<div class="admonition important">
-<p class="admonition-title">重要</p>
-<p>重要</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">小技巧</p>
-<p>小技巧</p>
-</div>
-<div class="admonition caution">
-<p class="admonition-title">警告</p>
-<p>警告</p>
-</div>
-<div class="admonition- admonition">
-<p class="admonition-title">自定义提示框</p>
-<p>自定义</p>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 

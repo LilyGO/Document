@@ -7,4 +7,3 @@
 
 通过一个简单的示例展示如何使用配置Arduino-IDE，并编译、下载固件至开发板。
 
-.. include:: /_build/inc/version-note.inc

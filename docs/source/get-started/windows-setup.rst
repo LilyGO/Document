@@ -16,23 +16,23 @@
 
 .. important:: 强烈建议安装桌面版IDE。当然，有机会你也可以尝试使用在线版IDE
 
-.. image:: ../../_static/w_install1.png
+.. image:: ../_static/w_install1.png
 
 ..
- .. image:: ../../_static/das.gif
+ .. image:: ../_static/das.gif
 
 
 
 2.下载
 ============
 
-.. image:: ../../_static/w_install2.png 
+.. image:: ../_static/w_install2.png 
 
 从下载页面获取最新版本。您可以选择安装程序（.exe）和Zip包。我们建议您使用第一个直接安装使用Arduino软件（IDE）所需的一切，包括驱动程序。使用Zip包，您需要手动安装驱动程序。如果要创建便携式安装，Zip文件也很有用 。
 下载完成后，继续安装，当您从操作系统收到警告时，请允许驱动程序安装过程。
 
 2.1 Arduino下载：
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
     * :download:`Windows安装包 <https://downloads.arduino.cc/arduino-1.8.9-windows.exe>`。
     * :download:`Windows免安装Zip包 <https://downloads.arduino.cc/arduino-1.8.9-windows.zip>`。
@@ -40,19 +40,19 @@
 3.安装 
 ============
 
-.. figure:: ../../_static/DRV_Capture1.png 
+.. figure:: ../_static/DRV_Capture1.png 
    :scale: 100
    :align: center
 
    选择要安装的组件
 
-.. figure:: ../../_static/DRV_Capture2.png 
+.. figure:: ../_static/DRV_Capture2.png 
    :scale: 100
    :align: center
 
    选择安装目录（建议不要安装在系统盘--C盘中）
 
-.. figure:: ../../_static/DRV_Capture3.png 
+.. figure:: ../_static/DRV_Capture3.png 
    :scale: 100
    :align: center
 
@@ -60,7 +60,7 @@
 
 4.配置
 ============
-.. figure:: ../../_static/das2.gif 
+.. figure:: ../_static/das2.gif 
    :scale: 100
    :align: left
 
