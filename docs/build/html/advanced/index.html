@@ -1,0 +1,249 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>1.简介 &mdash; T-Watch 编程文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="5.下载资源" href="../download/index.html" />
+    <link rel="prev" title="快速入门" href="../basics/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> T-Watch 编程文档
+          
+
+          
+            
+            <img src="../_static/k.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1.简介</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../get-started/index.html">2.快速上手</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">3.入门使用篇</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">4.进阶开发篇</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">1.1 背景</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">1.2 为什么要可编程？</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">1.3 产品功能</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">1.4 售后服务</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../download/index.html">5.下载资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-links/index.html">6.相关链接</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">T-Watch 编程文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>1.简介</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/advanced/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="id1">
+<h1>1.简介<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h1>
+<div class="section" id="id2">
+<h2>1.1 背景<a class="headerlink" href="#id2" title="永久链接至标题">¶</a></h2>
+<p>这两年智能家居、IOT发展的如火如荼，不仅是计算机，物联网还涉及智能手机和家用电器，以及智能手环，手表跟我们生活息息相关的物品和设备。目前这些智能手表、手环来说，功能都大同小异，智能手环普遍主要在于记录运动数据、消息推送、来电提醒、心律监测等。而智能手表来说可能功能就更丰富些，表盘的变换、支持通话、GPS定位、拍照录音、线下支付等一些智能手机的功能。而我们的这款产品却与众不同，T-Watch是一款可编程智能手表！</p>
+</div>
+<div class="section" id="id3">
+<h2>1.2 为什么要可编程？<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>为什么手表要支持可编程？为什么我们很多人都在要学习编程？为什么欧美发到国家的孩子更具有创造力，想象力。</p>
+<p>Scratch之父曾这么评价现代学子：“世上有两种学生，一种是“A型学生”即从小学到高中一直都学习很好，而尽管A型学生考试 成绩很好，却按部就班，并不具备在当今社会取得成功所必需的创造力和创新能力。</p>
+<p>另一种则是“X型学生”。“X型学生” 愿意冒险，勇于尝试新鲜事物；他们渴望提出自己的问题，而不是简单地解决教科书里的问题。”</p>
+<p>随着科技的发展，X型人才需求会越来越大。所以学习编程是重中之重的。兴趣是最好的老师，我们通过T-Wathch可编程智能手表作为变成平台及媒介，搭配Scratch,micropython等热门编程语言。大大降低了学习编程的门槛。</p>
+</div>
+<div class="section" id="id4">
+<h2>1.3 产品功能<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>主芯片：ESP32，双核MCU（集成双模蓝牙/wifi ），PMU电源管理</p></li>
+<li><p>显示屏：1.54寸LCD电容触摸屏</p></li>
+<li><p>传感器：BMA423三轴加速度计，内置计步算法，活动识别/跟踪，高级手势识别等功能</p></li>
+<li><p>GPS模块：使用索尼 CXD5603GF模块，快速定位当前位置</p></li>
+<li><p>Lora模块：新一代流行无线通信技术</p></li>
+<li><p>组合套件：锂电池，3D打印外壳，以及粗线表带，并且有橙、黄、粉、蓝4色可供选择</p></li>
+<li><p>开发平台：ESP-IDF(原生SDK)，Arduino,Lua,MicroPython,Scratch</p></li>
+</ul>
+</div>
+<div class="section" id="id5">
+<h2>1.4 售后服务<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<ul class="simple">
+<li><p>优质的技术支持</p></li>
+<li><p>完全开源硬件 软件</p></li>
+<li><p>独立的社区交流平台</p></li>
+<li><p>详情权威的学习资料</p></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../download/index.html" class="btn btn-neutral float-right" title="5.下载资源" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../basics/index.html" class="btn btn-neutral float-left" title="快速入门" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, LilyGo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

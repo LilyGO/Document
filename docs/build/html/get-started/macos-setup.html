@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>在 Mac OS 上安装 ESP32 工具链 &mdash; T-Watch 编程文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="从零开始设置 Mac OS 环境下的工具链" href="macos-setup-scratch.html" />
+    <link rel="prev" title="Linux 平台工具链的标准设置" href="linux-setup.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> T-Watch 编程文档
+          
+
+          
+            
+            <img src="../_static/k.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1.简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2.快速上手</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">开发板简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-step-by-step">详细安装步骤</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#get-started-setup-toolchain">第一步：设置工具链</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="windows-setup.html">Windows</a></li>
+<li class="toctree-l3"><a class="reference internal" href="linux-setup.html">Linux</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">MacOS</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">安装准备</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">安装工具链</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">下一步</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">相关文档</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esp-idf">第二步：获取 ESP-IDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-setup-path">第三步：设置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python">第四步：安装 Python 软件包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-start-project">第五步：开始创建工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-connect">第六步：连接设备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-configure">第七步：配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-build-and-flash">第八步：编译和烧录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-monitor">第九步：监视器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id30">环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id31">更新 ESP-IDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id32">相关文档</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">3.入门使用篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">4.进阶开发篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download/index.html">5.下载资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-links/index.html">6.相关链接</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">T-Watch 编程文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">快速入门</a> &raquo;</li>
+        
+      <li>在 Mac OS 上安装 ESP32 工具链</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/get-started/macos-setup.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="mac-os-esp32">
+<h1>在 Mac OS 上安装 ESP32 工具链<a class="headerlink" href="#mac-os-esp32" title="永久链接至标题">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">:link_to_translation:`en:[English]`</span></a></p>
+<div class="admonition important">
+<p class="admonition-title">重要</p>
+<p>对不起，CMake-based Build System Preview 还没有中文翻译。</p>
+</div>
+<div class="section" id="id3">
+<h2>安装准备<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<ul>
+<li><p>安装 pip:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">easy_install</span> <span class="n">pip</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p><code class="docutils literal notranslate"><span class="pre">pip</span></code> 稍后将用于安装 <a class="reference internal" href="index.html#get-started-get-packages"><span class="std std-ref">必要的 Python 软件包</span></a>。</p>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>安装工具链<a class="headerlink" href="#id4" title="永久链接至标题">¶</a></h2>
+<p>Mac OS 版本的 ESP32 工具链可以从以下地址下载：</p>
+<p><a href="#id7"><span class="problematic" id="id8">|download_link_osx|</span></a></p>
+<p>下载压缩文件之后，解压到 <code class="docutils literal notranslate"><span class="pre">~/esp</span></code> 目录中:</p>
+<p id="setup-macos-toolchain-add-it-to-path">工具链将被解压到 <code class="docutils literal notranslate"><span class="pre">~/esp/xtensa-esp32-elf/</span></code> 路径下。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> 文件中更新 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 环境变量以使用工具链。为了使 <code class="docutils literal notranslate"><span class="pre">xtensa-esp32-elf</span></code> 在各种终端会话中都可用，在 <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> 文件中加上以下指令:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>export PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH
+</pre></div>
+</div>
+<p>或者，您可以为上述命令创建一个别名。这样只有执行以下指令时工具链才能被使用。将下面的指令添加到您的 <code class="docutils literal notranslate"><span class="pre">〜/</span> <span class="pre">.profile</span></code> 文件中:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">alias</span> <span class="n">get_esp32</span><span class="o">=</span><span class="s2">&quot;export PATH=$HOME/esp/xtensa-esp32-elf/bin:$PATH&quot;</span>
+</pre></div>
+</div>
+<p>当需要使用工具链时，在命令行里输入 <code class="docutils literal notranslate"><span class="pre">get_esp32</span></code>，就可以将工具链添加到 <code class="docutils literal notranslate"><span class="pre">PATH</span></code> 中。</p>
+</div>
+<div class="section" id="id5">
+<h2>下一步<a class="headerlink" href="#id5" title="永久链接至标题">¶</a></h2>
+<p>前往 <a class="reference internal" href="index.html#get-started-get-esp-idf"><span class="std std-ref">第二步：获取 ESP-IDF</span></a> 继续配置开发环境。</p>
+</div>
+<div class="section" id="id6">
+<h2>相关文档<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="macos-setup-scratch.html">从零开始设置 Mac OS 环境下的工具链</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="macos-setup-scratch.html" class="btn btn-neutral float-right" title="从零开始设置 Mac OS 环境下的工具链" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="linux-setup.html" class="btn btn-neutral float-left" title="Linux 平台工具链的标准设置" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, LilyGo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

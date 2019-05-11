@@ -1,0 +1,296 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>在用户配置文件中添加 IDF_PATH &mdash; T-Watch 编程文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="与 ESP32 创建串口连接" href="establish-serial-connection.html" />
+    <link rel="prev" title="从零开始设置 Mac OS 环境下的工具链" href="macos-setup-scratch.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> T-Watch 编程文档
+          
+
+          
+            
+            <img src="../_static/k.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1.简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2.快速上手</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">开发板简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-step-by-step">详细安装步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-setup-toolchain">第一步：设置工具链</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esp-idf">第二步：获取 ESP-IDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-setup-path">第三步：设置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python">第四步：安装 Python 软件包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-start-project">第五步：开始创建工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-connect">第六步：连接设备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-configure">第七步：配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-build-and-flash">第八步：编译和烧录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-monitor">第九步：监视器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id30">环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id31">更新 ESP-IDF</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id32">相关文档</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">在用户配置文件中添加 IDF_PATH</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#windows">Windows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#linux-and-macos">Linux and MacOS</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="establish-serial-connection.html">与 ESP32 创建串口连接</a></li>
+<li class="toctree-l3"><a class="reference internal" href="make-project.html">通过 make 指令创建和烧录项目</a></li>
+<li class="toctree-l3"><a class="reference internal" href="eclipse-setup.html">Eclipse IDE 的创建和烧录指南</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">3.入门使用篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">4.进阶开发篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download/index.html">5.下载资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-links/index.html">6.相关链接</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">T-Watch 编程文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">快速入门</a> &raquo;</li>
+        
+      <li>在用户配置文件中添加 IDF_PATH</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/get-started/add-idf_path-to-profile.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="idf-path">
+<h1>在用户配置文件中添加 IDF_PATH<a class="headerlink" href="#idf-path" title="永久链接至标题">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">:link_to_translation:`en:[English]`</span></a></p>
+<p>为了在系统多次重新启动时保留 “IDF_PATH” 环境变量的设置，请按照以下说明将其添加到用户配置文件中。</p>
+<div class="section" id="windows">
+<span id="add-idf-path-to-profile-windows"></span><h2>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<p>用户配置文件脚本存放在 <code class="docutils literal notranslate"><span class="pre">C:/msys32/etc/profile.d/</span></code> 目录中。每次打开 MSYS2 窗口时，系统都执行这些脚本。</p>
+<ol class="arabic">
+<li><p>在 <code class="docutils literal notranslate"><span class="pre">C:/msys32/etc/profile.d/</span></code> 目录下创建一个新的脚本文件。将其命名为 <code class="docutils literal notranslate"><span class="pre">export_idf_path.sh</span></code>。</p></li>
+<li><p>确定 ESP-IDF 目录的路径。路径与系统配置有关，例如 <code class="docutils literal notranslate"><span class="pre">C:\msys32\home\user-name\esp\esp-idf</span></code>。</p></li>
+<li><p>在脚本中加入 <code class="docutils literal notranslate"><span class="pre">export</span></code> 命令，e.g.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">IDF_PATH</span><span class="o">=</span><span class="s2">&quot;C:/msys32/home/user-name/esp/esp-idf&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<blockquote>
+<div><p>请将原始 Windows 路径中将反斜杠替换为正斜杠。</p>
+</div></blockquote>
+<ol class="arabic">
+<li><p>保存脚本。</p></li>
+<li><p>关闭 MSYS2 窗口并再次打开。输入以下命令检查是否设置了 <code class="docutils literal notranslate"><span class="pre">IDF_PATH</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printenv</span> <span class="n">IDF_PATH</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>将此前在脚本文件中输入的路径打印出来。</p>
+<p>如果您不想在用户配置文件中永久设置 <code class="docutils literal notranslate"><span class="pre">IDF_PATH</span></code>，则应在打开 MSYS2 窗口时手动输入:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">IDF_PATH</span><span class="o">=</span><span class="s2">&quot;C:/msys32/home/user-name/esp/esp-idf&quot;</span>
+</pre></div>
+</div>
+<p>如您在安装用于 ESP32 开发的软件时，从 <a class="reference internal" href="index.html#get-started-setup-path"><span class="std std-ref">第三步：设置环境变量</span></a> 小节跳转到了这里，请返回到 <a class="reference internal" href="index.html#get-started-start-project"><span class="std std-ref">第五步：开始创建工程</span></a> 小节。</p>
+</div>
+<div class="section" id="linux-and-macos">
+<span id="add-idf-path-to-profile-linux-macos"></span><h2>Linux and MacOS<a class="headerlink" href="#linux-and-macos" title="永久链接至标题">¶</a></h2>
+<p>在 <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> 文件中加入以下指令，创建 <code class="docutils literal notranslate"><span class="pre">IDF_PATH</span></code>：</p>
+<blockquote>
+<div><p>export IDF_PATH=~/esp/esp-idf</p>
+</div></blockquote>
+<p>注销并重新登录以使此更改生效。</p>
+<div class="admonition note">
+<p class="admonition-title">注解</p>
+<p>如果将 <code class="docutils literal notranslate"><span class="pre">/bin/bash</span></code>  已设为登录 shell，并且 <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code> 和 <code class="docutils literal notranslate"><span class="pre">.profile</span></code> 同时存在，则更新 <code class="docutils literal notranslate"><span class="pre">.bash_profile</span></code>。</p>
+</div>
+<p>运行以下命令以确保 <code class="docutils literal notranslate"><span class="pre">IDF_PATH</span></code> 已经设置好:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">printenv</span> <span class="n">IDF_PATH</span>
+</pre></div>
+</div>
+<p>此前在 <code class="docutils literal notranslate"><span class="pre">~/.profile</span></code> 文件中输入（或者手动设置）的路径应该被打印出来。</p>
+<p>如果不想永久设置 <code class="docutils literal notranslate"><span class="pre">IDF_PATH</span></code>，每次重启或者注销时在终端窗口中手动输入:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">export</span> <span class="n">IDF_PATH</span><span class="o">=~/</span><span class="n">esp</span><span class="o">/</span><span class="n">esp</span><span class="o">-</span><span class="n">idf</span>
+</pre></div>
+</div>
+<p>如果您从 <a class="reference internal" href="index.html#get-started-setup-path"><span class="std std-ref">第三步：设置环境变量</span></a> 小节跳转到了这里，在安装用于 ESP32 开发的软件时，返回到 <a class="reference internal" href="index.html#get-started-start-project"><span class="std std-ref">第五步：开始创建工程</span></a> 小节。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="establish-serial-connection.html" class="btn btn-neutral float-right" title="与 ESP32 创建串口连接" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="macos-setup-scratch.html" class="btn btn-neutral float-left" title="从零开始设置 Mac OS 环境下的工具链" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, LilyGo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

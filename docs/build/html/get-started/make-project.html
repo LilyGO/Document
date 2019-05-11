@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-CN" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="zh-CN" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>通过 make 指令创建和烧录项目 &mdash; T-Watch 编程文档 1.0 文档</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+        <script type="text/javascript" src="../_static/translations.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
+    <link rel="next" title="Eclipse IDE 的创建和烧录指南" href="eclipse-setup.html" />
+    <link rel="prev" title="与 ESP32 创建串口连接" href="establish-serial-connection.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> T-Watch 编程文档
+          
+
+          
+            
+            <img src="../_static/k.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction/index.html">1.简介</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">2.快速上手</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">概述</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">特色</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">准备工作</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">开发板简介</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-step-by-step">详细安装步骤</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-setup-toolchain">第一步：设置工具链</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#esp-idf">第二步：获取 ESP-IDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-setup-path">第三步：设置环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#python">第四步：安装 Python 软件包</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-start-project">第五步：开始创建工程</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-connect">第六步：连接设备</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-configure">第七步：配置</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-build-and-flash">第八步：编译和烧录</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#get-started-monitor">第九步：监视器</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id30">环境变量</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id31">更新 ESP-IDF</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id32">相关文档</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="add-idf_path-to-profile.html">在用户配置文件中添加 IDF_PATH</a></li>
+<li class="toctree-l3"><a class="reference internal" href="establish-serial-connection.html">与 ESP32 创建串口连接</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">通过 make 指令创建和烧录项目</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">寻找项目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">配置项目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">编译项目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">烧录项目</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">仅编译和烧录应用程序</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">分区表</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="eclipse-setup.html">Eclipse IDE 的创建和烧录指南</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../basics/index.html">3.入门使用篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced/index.html">4.进阶开发篇</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../download/index.html">5.下载资源</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../related-links/index.html">6.相关链接</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">T-Watch 编程文档</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">快速入门</a> &raquo;</li>
+        
+      <li>通过 make 指令创建和烧录项目</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/get-started/make-project.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="make">
+<h1>通过 make 指令创建和烧录项目<a class="headerlink" href="#make" title="永久链接至标题">¶</a></h1>
+<p><a href="#id1"><span class="problematic" id="id2">:link_to_translation:`en:[English]`</span></a></p>
+<div class="section" id="id3">
+<h2>寻找项目<a class="headerlink" href="#id3" title="永久链接至标题">¶</a></h2>
+<p>和 <a class="reference external" href="https://github.com/espressif/esp-idf-template">esp-idf-template</a> 项目一样，ESP-IDF 在 Github 上的 <a href="#id4"><span class="problematic" id="id5">:idf:`examples`</span></a> 目录下也有示例项目。</p>
+<p>找到需要的项目后，切换到其目录，然后可以对其进行配置和构建。</p>
+</div>
+<div class="section" id="id6">
+<h2>配置项目<a class="headerlink" href="#id6" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">menuconfig</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id7">
+<h2>编译项目<a class="headerlink" href="#id7" title="永久链接至标题">¶</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="nb">all</span>
+</pre></div>
+</div>
+<p>… 该命令将配置 app 和 bootloader 并根据配置生成分区表。</p>
+</div>
+<div class="section" id="id8">
+<h2>烧录项目<a class="headerlink" href="#id8" title="永久链接至标题">¶</a></h2>
+<p>当 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code> 结束后，系统将打印一命令行提示您如何使用 esptool.py 烧录芯片。用户也可以通过以下指令进行烧录:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">make</span> <span class="n">flash</span>
+</pre></div>
+</div>
+<p>这种方法将烧录整个项目（包括 app, bootloader 和分割表）到芯片中。通过命令 <cite>make menuconfig</cite> 可以配置串口。</p>
+<p>运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">flash</span></code> 之前无需运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">all</span></code>。运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">flash</span></code> 将自动重建烧录所需的一切。</p>
+</div>
+<div class="section" id="id9">
+<h2>仅编译和烧录应用程序<a class="headerlink" href="#id9" title="永久链接至标题">¶</a></h2>
+<p>在最初的烧录之后，用户可以仅创建烧录 app，不烧录 bootloader 和分区表:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">app</span></code> - 仅创建应用程序。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">app-flash</span></code> - 仅烧录应用程序。</p></li>
+</ul>
+<p>需要时 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">app-flash</span></code> 指令将自动重建 app。</p>
+<p>如果 bootloader 和分区表不变的话，对他们进行重新烧录并不会有负面影响。</p>
+</div>
+<div class="section" id="id10">
+<h2>分区表<a class="headerlink" href="#id10" title="永久链接至标题">¶</a></h2>
+<p>编译完项目后，”build” 目录将包含一个名为 “my_app.bin” 的二进制文件。这是一个可由 bootloader 加载的 ESP32 映像二进制文件。</p>
+<p>一个 ESP32 flash 可以包含多个应用程序，以及多种数据（校准数据，文件系统，参数存储等）。因此，分区表烧录在 flash 偏移地址 0x8000 的地方。</p>
+<p>分区表中的每个条目都有一个名称（标签），类型（app，数据或其他），子类型和闪存中分区表被存放的偏移量。</p>
+<p>使用分区表最简单的方法是 <cite>make menuconfig</cite> 并选择一个简单的预定义分区表:</p>
+<ul class="simple">
+<li><p>“Single factory app, no OTA”</p></li>
+<li><p>“Factory app, two OTA definitions”</p></li>
+</ul>
+<p>在这两种情况下，出厂应用程序的烧录偏移为 0x10000。运行 <cite>make partition_table</cite>，可以打印分区表摘要。</p>
+<p>更多关于 <span class="xref std std-doc">分区表</span> 的信息，以及如何创建自定义分区表，可以查看 <span class="xref std std-doc">文档</span>。</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="eclipse-setup.html" class="btn btn-neutral float-right" title="Eclipse IDE 的创建和烧录指南" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="establish-serial-connection.html" class="btn btn-neutral float-left" title="与 ESP32 创建串口连接" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, LilyGo
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
